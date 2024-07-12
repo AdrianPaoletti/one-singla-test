@@ -37,15 +37,6 @@
           appId: "267a9b97-eabb-4f1e-8418-24960db42dd1",
         });
       });
-      OneSignalDeferred.isPushNotificationsEnabled()
-        .then(function (isEnabled) {
-          if (!isEnabled) {
-            OneSignal.showNativePrompt();
-          }
-        })
-        .catch(function (error) {
-          console.log("Error checking push notification status:", error);
-        });
     </script>
   </head>
   <body>
