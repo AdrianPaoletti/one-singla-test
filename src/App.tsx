@@ -1,7 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useEffect } from "react";
+import runOneSignal from "./oneSignal";
 
 function App() {
+  useEffect(() => {
+    runOneSignal();
+  });
+
   return (
     <div className="App">
       <header className="App-header">
