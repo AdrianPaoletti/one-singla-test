@@ -1,11 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useEffect } from "react";
-import runOneSignal from "./oneSignal";
+import OneSignal from "react-onesignal";
 
 function App() {
   useEffect(() => {
-    runOneSignal();
+    OneSignal.init({
+      appId: "267a9b97-eabb-4f1e-8418-24960db42dd1",
+      allowLocalhostAsSecureOrigin: true,
+    }).then(() => {
+      OneSignal.Slidedown.promptPush();
+    });
   });
 
   return (
