@@ -11,7 +11,7 @@ function App() {
     }).then(() => {
       OneSignal.Slidedown.promptPush();
     });
-  });
+  }, []);
 
   return (
     <div className="App">
