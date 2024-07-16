@@ -14,15 +14,15 @@ root.render(
   </React.StrictMode>
 );
 
-serviceWorkerRegistration.register({
-  onUpdate: async (registration: any) => {
-    if (registration && registration.waiting) {
-      await registration.unregister();
-      registration.waiting.postMessage({ type: "SKIP_WAITING" });
-      // window.location.reload();
-    }
-  },
-});
+// serviceWorkerRegistration.register({
+//   onUpdate: async (registration: any) => {
+//     if (registration && registration.waiting) {
+//       await registration.unregister();
+//       registration.waiting.postMessage({ type: "SKIP_WAITING" });
+//       // window.location.reload();
+//     }
+//   },
+// });
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
