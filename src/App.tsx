@@ -6,6 +6,9 @@ import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
+    OneSignal.init({
+      appId: "267a9b97-eabb-4f1e-8418-24960db42dd1",
+    });
     OneSignal.login("test");
     return () => {};
   }, []);
