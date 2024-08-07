@@ -1,14 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
 // import { useEffect } from "react";
-// import OneSignal from "react-onesignal";
+import OneSignal from "react-onesignal";
+import { useEffect } from "react";
 
 function App() {
-  // useEffect(() => {
-  //   runOneSignal()
-
-  //   return () => {};
-  // }, []);
+  useEffect(() => {
+    OneSignal.login("test");
+    return () => {};
+  }, []);
 
   return (
     <div className="App">
