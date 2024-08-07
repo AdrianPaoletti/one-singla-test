@@ -1,17 +1,26 @@
 import logo from "./logo.svg";
 import "./App.css";
-// import { useEffect } from "react";
 import OneSignal from "react-onesignal";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [initialized, setInitialized] = useState(false);
+
   useEffect(() => {
-    if ((window as any).isInit) {
+    OneSignal.init({ appId: "267a9b97-eabb-4f1e-8418-24960db42dd1" }).then(
+      () => {
+        setInitialized(true);
+        // do other stuff
+      }
+    );
+  }, []);
+  useEffect(() => {
+    if (initialized) {
       OneSignal.login("test");
     }
 
     return () => {};
-  }, [(window as any).isInit]);
+  }, [initialized]);
 
   return (
     <div className="App">
